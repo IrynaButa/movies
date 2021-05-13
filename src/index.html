@@ -48,23 +48,24 @@
             </label>
             <input id="passw" type="password"required autocomplete="off" class="input"/>
           </div>
-           <!-- <div class="label-field">
-            <label>
-              Birth date<span class="req">*</span>
-            </label>
-            <input type="password"required autocomplete="off"/>
-          </div> -->
+          <div class="label-field">
+            <label class="req">Date of birth:</label>
           
-           <div class="label-field">
-           <select class="label-field" id="selectID">
-    <option selected="" value="Default" >Choose country</option>
-    <option value="AF" >Australia</option>
-    <option value="AL" >Canada</option>
-    <option value="DZ" >India</option>
-    <option value="AS" >Russia</option>
-    <option value="AD" >USA</option>
-  </select>
-          </div>
+          <input type="date" id="start" class="input" name="trip-start" value="....-..-.." min="2000-01-01" max="2020-12-31">
+        </div>
+          
+
+       
+        <div class="select">
+          <select name="slct" id="slct">
+            <option selected disabled>Choose country</option>
+          <option value="AF">Australia</option>
+          <option value="AL">Canada</option>
+          <option value="DZ">India</option>
+          <option value="AS">Russia</option>
+          <option value="AD">USA</option>
+          </select>
+        </div>
           <div class="check-contract-terms">
     <label class="check-label">
 <input type="checkbox" class="check-input" name="user-agreement" required>

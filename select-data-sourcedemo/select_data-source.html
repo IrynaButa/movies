@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0">
+
+    <script>
+        // Ignore this in your implementation
+        window.isMbscDemo = true;
+    </script>
+
+    <title>Data source</title>
+
+    <!-- Mobiscroll JS and CSS Includes -->
+    <link rel="stylesheet" href="css/mobiscroll.javascript.min.css">
+    <script src="js/mobiscroll.javascript.min.js"></script>
+
+    <style type="text/css">
+    body {
+        margin: 0;
+        padding: 0;
+    }
+
+    body,
+    html {
+        height: 100%;
+    }
+
+    </style>
+
+</head>
+<body>
+
+<div mbsc-page class="demo-data-source">
+  <div style="height:100%">
+      <div mbsc-form>
+        <div class="mbsc-grid mbsc-form-grid">
+            <div class="mbsc-row">
+                <div class="mbsc-col-sm-12 mbsc-col-md-4">
+                    <label>
+                        HTML
+                        <select mbsc-dropdown id="demo-data-source" data-input-style="box" data-label-style="stacked">
+                            <option value="1">Atlanta</option>
+                            <option value="2">Berlin</option>
+                            <option value="3">Boston</option>
+                            <option value="4">Chicago</option>
+                            <option value="5">London</option>
+                            <option value="6">Los Angeles</option>
+                            <option value="7">New York</option>
+                            <option value="8">Paris</option>
+                            <option value="9">San Francisco</option>
+                        </select>
+                    </label>
+                </div>
+                <div class="mbsc-col-sm-12 mbsc-col-md-4">
+                    <label>
+                        Data object
+                        <select mbsc-dropdown id="demo-data-source-data-object" data-input-style="box" data-label-style="stacked"></select>
+                    </label>
+                </div>
+                <div class="mbsc-col-sm-12 mbsc-col-md-4">
+                    <label>
+                        Remote data
+                        <select mbsc-dropdown id="demo-data-source-remote" data-input-style="box" data-label-style="stacked"></select>
+                    </label>
+                </div>
+            </div>
+        </div>
+    </div>
+  </div>
+</div>
+
+<script>
+
+    mobiscroll.settings = {
+        lang: 'ua',                       // Specify language like: lang: 'pl' or omit setting to use default
+        theme: 'ios',                     // Specify theme like: theme: 'ios' or omit setting to use default
+        themeVariant: 'light'             // More info about themeVariant: https://docs.mobiscroll.com/4-10-8/javascript/select#opt-themeVariant
+    };
+    
+    // Make sure to run it on a web server when trying this demo locally!
+    
+    mobiscroll.select('#demo-data-source', {
+        touchUi: false                    // More info about touchUi: https://docs.mobiscroll.com/4-10-8/javascript/select#opt-touchUi
+    });
+    
+    mobiscroll.select('#demo-data-source-data-object', {
+        touchUi: false,                   // More info about touchUi: https://docs.mobiscroll.com/4-10-8/javascript/select#opt-touchUi
+        placeholder: 'Please Select...',  // More info about placeholder: https://docs.mobiscroll.com/4-10-8/javascript/select#opt-placeholder
+        data: [{                          // More info about data: https://docs.mobiscroll.com/4-10-8/javascript/select#opt-data
+            value: 1,
+            text: 'Atlanta',
+            selected: true
+        }, {
+            value: 2,
+            text: 'Berlin'
+        }, {
+            value: 3,
+            text: 'Boston'
+        }, {
+            value: 4,
+            text: 'Chicago'
+        }, {
+            value: 5,
+            text: 'London'
+        }, {
+            value: 6,
+            text: 'Los Angeles'
+        }, {
+            value: 7,
+            text: 'New York'
+        }, {
+            value: 8,
+            text: 'Paris'
+        }, {
+            value: 9,
+            text: 'San Francisco'
+        }]
+    });
+
+    mobiscroll.select('#demo-data-source-remote', {
+        touchUi: false,                   // More info about touchUi: https://docs.mobiscroll.com/4-10-8/javascript/select#opt-touchUi
+        placeholder: 'Please Select...',  // More info about placeholder: https://docs.mobiscroll.com/4-10-8/javascript/select#opt-placeholder
+        data: {                           // More info about data: https://docs.mobiscroll.com/4-10-8/javascript/select#opt-data
+            url: 'https://trial.mobiscroll.com/content/languages.json',
+            dataType: 'json'
+        },
+        maxWidth: 300                     // More info about maxWidth: https://docs.mobiscroll.com/4-10-8/javascript/select#opt-maxWidth
+    });
+</script>
+
+</body>
+</html>

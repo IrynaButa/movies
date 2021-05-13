@@ -78,4 +78,3 @@ refs.btnLogin.addEventListener('submit', onLogin);
             }
 
         }
-        

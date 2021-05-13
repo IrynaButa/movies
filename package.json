@@ -1,5 +1,5 @@
 {
-  "name": "webpack-starter-kit",
+  "name": "practice",
   "version": "1.1.0",
   "description": "",
   "main": "index.js",
@@ -11,15 +11,15 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/IrynaButa/movies.git"
+    "url": "git+https://github.com/IrynaButa/practice.git"
   },
   "keywords": [],
   "author": "Alexander Repeta <alexander.repeta@gmail.com>",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/IrynaButa/movies/issues"
+    "url": "https://github.com/IrynaButa/practice/issues"
   },
-  "homepage": "https://github.com//IrynaButa/movies#readme",
+  "homepage": "https://github.com//IrynaButa/practice#readme",
   "devDependencies": {
     "@babel/core": "^7.11.6",
     "@babel/plugin-proposal-class-properties": "^7.10.4",
