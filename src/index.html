@@ -8,30 +8,30 @@
   </head>
 
   <body>
-   
+  
   <div class="form">
       
      
-      
-      <div class="tab-content">
+           <div class="tab-content">
         <div id="signup">   
           <h1>Sign Up</h1>
           
-          <form action="/" method="post">
+          <form name='registration' onSubmit="return formValidation();">
           
           <div class="top-row">
             <div class="label-field">
-              <label>
+              <label for="username">
                 Real Name<span class="req">*</span>
               </label>
-              <input id="realname" type="text" required autocomplete="off" class="input" />
+              <input id="realname" type="text" name="username" required autocomplete="off" class="input" />
             </div>
-        
+
+
             <div class="label-field">
-              <label>
+              <label for="username">
                 Login<span class="req">*</span>
               </label>
-              <input id="loginname" type="text"required autocomplete="off" class="input"/>
+              <input id="loginname" name="username" type="text"required autocomplete="off" class="input"/>
             </div>
           </div>
 
@@ -51,11 +51,8 @@
           <div class="label-field">
             <label class="req">Date of birth:</label>
           
-          <input type="date" id="start" class="input" name="trip-start" value="....-..-.." min="2000-01-01" max="2020-12-31">
+          <input type="date" id="start" class="input" name="trip-start" value="1999-12-31" min="2000-01-01" max="2020-12-31">
         </div>
-          
-
-       
         <div class="select">
           <select name="slct" id="slct">
             <option selected disabled>Choose country</option>
@@ -73,12 +70,10 @@
     <use xlink:href="./images/spriteopt.svg#icon-icon-check">
     </use>
 </svg>
-<p class="contract-terms">agree with terms and conditions </p>
+<p class="contract-terms">Agree with terms and conditions </p>
     </label>
-    </div>
-          
-          <button type="submit" class="button button-block btn-su"/>Sign up</button>
-          
+    </div> 
+          <button type="submit" class="button button-block btn-su"/>Sign up</button>   
           </form>
 
         </div>
@@ -104,18 +99,12 @@
             </label>
             <input id="userpassw" type="password"required autocomplete="off" class="input"/>
           </div>
-          
-          
           <button class="button button-block btn-l">Log In</button>
-          
           </form>
 
         </div>
         
       </div>  
 </div>
-
-  
-
   </body>
 </html>

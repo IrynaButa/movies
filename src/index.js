@@ -1,5 +1,6 @@
 import './styles.scss';
 
+
 const refs = {
     form: document.querySelector(".form"),
   signupBox: document.getElementById("signup"),
@@ -14,21 +15,33 @@ userPasswordTab:document.getElementById("userpassw"),
     btnSignUp: document.querySelector(".btn-su"),
 btnLogin: document.querySelector(".btn-l")
 }
-
+//refs.form.addEventListener('submit', onRegister);
 refs.btnSignUp.addEventListener('submit', onRegister);
 refs.btnLogin.addEventListener('submit', onLogin);
 
- const emailArray=[];
-        const passwordArray=[];
-
+const emailArray=[];
+const passwordArray = [];
+ 
         function onRegister(event){
             event.preventDefault();
 
-            if (refs.emailTab.value == ""){
+if (refs.realNameTab.value == ""){
+               
+                alert("Real name required.");
+                return ;
+}
+            else if (refs.loginTab.value == ""){
+               
+                alert("Login required.");
+                return ;
+            }
+            else if (refs.emailTab.value == ""){
+               
                 alert("Email required.");
                 return ;
             }
-            else if (refs.passwordTab.value == ""){
+            else if (refs.passwordTab.value == "") {
+                
                 alert("Password required.");
                 return ;
             }
@@ -36,6 +49,7 @@ refs.btnLogin.addEventListener('submit', onLogin);
             else if(emailArray.indexOf(refs.emailTab.value) == -1){
                 emailArray.push(refs.emailTab.value);
                 passwordArray.push(refs.passwordTab.value);
+
 
                 alert(refs.emailTab.value + "  Thanks for registration. \nTry to login Now");
 
@@ -47,6 +61,8 @@ refs.btnLogin.addEventListener('submit', onLogin);
                 alert(refs.emailTab.value + " is already register.");
                 return ;
             }
+
+             
         }
         function onLogin(event){
             event.preventDefault();
@@ -54,7 +70,7 @@ refs.btnLogin.addEventListener('submit', onLogin);
             const i = emailArray.indexOf(refs.emailTab.value);
 
             if(emailArray.indexOf(refs.emailTab.value) === -1){
-                if (refs.emailTab.value = ""){
+                if (refs.emailTab.value = "") {
                     alert("Email required.");
                     return ;
                 }
