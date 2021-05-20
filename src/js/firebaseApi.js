@@ -27,9 +27,9 @@ export const uiConfig = {
   },
   signInOptions: [
     firebase.auth.GoogleAuthProvider.PROVIDER_ID,
-    firebase.auth.FacebookAuthProvider.PROVIDER_ID,
-    firebase.auth.GithubAuthProvider.PROVIDER_ID,
-    firebaseui.auth.AnonymousAuthProvider.PROVIDER_ID,
+    // firebase.auth.FacebookAuthProvider.PROVIDER_ID,
+    // firebase.auth.GithubAuthProvider.PROVIDER_ID,
+    // firebaseui.auth.AnonymousAuthProvider.PROVIDER_ID,
   ],
   tosUrl: 'https://www.termsfeed.com/live/255b9d74-2174-485a-b58c-eb186fe5639f',
   // privacyPolicyUrl:
@@ -41,58 +41,22 @@ ui.start('#firebaseui-auth-container', uiConfig);
 
 // https://team-project-event-booster.firebaseapp.com/__/auth/handler
 
-export const db = firebase.firestore();
+export const db = firebase.database();
 
-const docRef = db.collection('users').doc('BhuqyaszFAsfqQgXM17b');
+const docRef = db.ref('clients').push();
+console.log(docRef);
 
-docRef
-  .get()
-  .then(doc => {
-    if (doc.exists) {
-      console.log('Document data:', doc.data());
-    } else {
-      // doc.data() will be undefined in this case
-      console.log('No such document!');
-    }
-  })
-  .catch(error => {
-    console.log('Error getting document:', error);
-  });
+async function  newClient(newClinet) {
+           try {
+               const addClient = await firebase.database().ref('clients').push(newClinet)
+               console.log(addClient)
+           } catch (error) {
+               console.log(error.message)
+               throw error
+           }
+       }
 
-// console.log(db.collection('users').get().then((doc)=>doc.data));
 
-// db.collection("users").add({
-//   first: "Ada",
-//   last: "Lovelace",
-//   born: 1815
-// })
-// .then((docRef) => {
-//   console.log("Document written with ID: ", docRef.id);
-// })
-// .catch((error) => {
-//   console.error("Error adding document: ", error);
-// });
-
-// console.log(db.collection('users'));
-
-// db.collection("users").add({
-//   first: "Alan",
-//   middle: "Mathison",
-//   last: "Turing",
-//   born: 1912
-// })
-// .then((docRef) => {
-//   console.log("Document written with ID: ", docRef.id);
-// })
-// .catch((error) => {
-//   console.error("Error adding document: ", error);
-// });
-
-// db.collection("users").get().then((querySnapshot) => {
-//   querySnapshot.forEach((doc) => {
-//       console.log(doc.data());
-//   });
-// });
 
 const user = firebase.auth().currentUser;
 firebase.auth().onAuthStateChanged(function (user) {
