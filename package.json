@@ -52,8 +52,11 @@
     "basiclightbox": "^5.0.4",
     "core-js": "^3.6.5",
     "firebase": "^8.6.1",
+    "firebaseui": "^4.8.0",
+    "google-material-design-icons": "^1.0.0",
     "handlebars": "^4.7.6",
     "lodash.throttle": "^4.1.1",
+    "material-design-icons": "^3.0.1",
     "pnotify": "^5.2.0",
     "swiper": "^6.5.9"
   }
