@@ -14,5 +14,5 @@ import '@pnotify/core/dist/BrightTheme.css';
 // import './js/submitForm';
 import './js/firebaseApi';
 //import './js/addAnimationOnCards';
-import './js/auth';
+//import './js/auth';
 //import './js/logo';
